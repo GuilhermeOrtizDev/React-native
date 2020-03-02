@@ -5,6 +5,9 @@ export default class style extends Component{
     clicou = () => {
         Alert.alert("Dynamico Castro", "email/senha incorreto");
     }
+    state ={
+        nome : ''
+    }
     render(){
         return(
             <View style={styles.container}>
@@ -14,6 +17,7 @@ export default class style extends Component{
                 />
                 <TextInput
                     style={styles.input}
+                    onChangeText={ text => this.state.nome = text}
                     placeholder="Digite seu email"
                 />
                 <TextInput
@@ -21,7 +25,7 @@ export default class style extends Component{
                     placeholder="Digite sua senha"
                     secureTextEntry={true}
                 />
-                <TouchableOpacity style={styles.botao} onPress={()=>{this.props.navigation.navigate('Home')}}>
+                <TouchableOpacity style={styles.botao} onPress={()=>{this.props.navigation.navigate('Home', {'nome':this.state.nome})}}>
                     <Text style={styles.Btext}>Login</Text>
                 </TouchableOpacity>
             </View>   
