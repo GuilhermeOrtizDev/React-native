@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { createDrawerNavigator, createAppContainer } from 'react-navigation';
+import { createDrawerNavigator, createAppContainer } from '@react-navigation';
 
 import Home from './06-home';
 import Profile from './06-profile';
